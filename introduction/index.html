@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BEM — Introduction</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="BEM — Block Element Modifier is a methodology, that helps you to achieve reusable components and code sharing in the front-end.">
+    <meta name="keywords" content="BEM, HTML, CSS, JS, JavaScript, framework, front-end, frontend, web development, code sharing, components, blocks, bower">
+    <meta name="author" content="Vsevolod Strukchinsky, Vladimir Starkov and contributors.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@getbem">
+    <link rel="stylesheet" href="/introduction.css">
+    <meta name="og:image" content="http://getbem.com/img/bem_black.png"/>
+    <meta name="og:url" content="http://getbem.com/introduction/"/>
+    <meta name="og:title" content="BEM — Introduction"/>
+    <meta name="og:description" content="BEM is a highly useful, powerful and simple naming convention to make your front-end code easier to read and understand, easier to work with, easier to scale, more robust and explicit and a lot more strict."/>
+  </head>
+  <body data-spy="scroll" data-target=".affix__menu" class="page"><a href="https://github.com/getbem/getbem.com" title="Fork getbem.com on GitHub" class="fork"><img src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" class="fork__image"/></a>
+    <div role="navigation" class="navbar navbar_theme_default navbar_static-top">
+      <div class="grid grid_fixed">
+        <div class="navbar__header">
+          <button data-toggle="collapse" data-target="#menu" class="navbar__toggler">
+            <div class="sr-only">Toggle navigation</div><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button><a href="/" class="navbar__brand">Get BEM</a>
+        </div>
+        <div id="menu" class="navbar__collapse collapse">
+          <ul class="nav navbar__nav">
+            <li class="nav__item nav__item_active"><a href="/introduction/" class="nav__link">Introduction</a></li>
+            <li class="nav__item"><a href="/naming/" class="nav__link">Naming</a></li>
+            <li class="nav__item"><a href="/building/" class="nav__link">Building</a></li>
+            <li class="nav__item"><a href="/faq/" class="nav__link">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid_fixed">
+      <div class="grid__row">
+        <div class="grid__cell-md grid__cell-md_size_9">
+          <div style="padding-left: 0" class="grid">
+            <div class="grid__row">
+              <div class="grid__cell-sm grid__cell-sm_size_12">
+                <div class="heading heading_level_1">
+                  <h1 id="introduction" class="heading heading_level_1 heading_inline heading_wrapped">Introduction</h1><a href="https://github.com/getbem/getbem.com/edit/master/levels/pages/introduction/introduction.jade" class="badge badge_theme_text">Improve this article</a>
+                </div><p>On smaller brochure sites, how your organize your styles isn’t usually a big concern. You get in there, write some CSS, or maybe even some SASS. You compile it all into a single stylesheet with SASS’s production settings, and then you aggregate it to get all the stylesheets from modules into a nice tidy package.</p>
+<p>However, when it comes to larger, more complex projects, how you organize your code is a key to efficiency. Not only in how how much time it takes, but also in how much code you write, and how much a browser has to load. This is especially important when you’re working with a team of themers, and when performance is important.</p>
+<p>This also true for long-term projects with legacy code (read &quot;<a href="http://webuild.envato.com/blog/how-to-scale-and-maintain-legacy-css-with-sass-and-smacss/">How to Scale and Maintain Legacy CSS with Sass and SMACSS</a>&quot; — some nice SMACSS and BEM mixing in there).</p>
+
+              </div>
+            </div>
+            <div class="grid__row">
+              <div class="grid__cell-sm grid__cell-sm_size_12 raw-text"><h2 id="methodologies">Methodologies</h2>
+<p>There are plenty of <a href="https://github.com/ikkou/awesome-css#architecture">methodologies</a> out there which aimed on reducing CSS codebase and organizing programmers cooperation and maintaining of CSS code. This is obvious in large projects like Twitter, Facebook and <a href="http://markdotto.com/2014/07/23/githubs-css/#two-bundles">Github</a>, but other projects often grows into same “Huge CSS file” state pretty quickly.</p>
+
+              </div>
+              <div class="grid__cell-sm grid__cell-sm_size_3 methodology raw-text"><h4 id="-oocss-https-oocss-org-"><a href="https://oocss.org/">OOCSS</a></h4>
+<p>Separating container and content with CSS “objects”</p>
+
+              </div>
+              <div class="grid__cell-sm grid__cell-sm_size_3 methodology raw-text"><h4 id="-smacss-https-smacss-com-"><a href="https://smacss.com/">SMACSS</a></h4>
+<p>Style-guide to write your CSS with five categories for CSS rules</p>
+
+              </div>
+              <div class="grid__cell-sm grid__cell-sm_size_3 methodology raw-text"><h4 id="-suitcss-http-suitcss-github-io-"><a href="http://suitcss.github.io/">SUITCSS</a></h4>
+<p>Structured class names and meaningful hyphens</p>
+
+              </div>
+              <div class="grid__cell-sm grid__cell-sm_size_3 methodology methodology_last raw-text"><h4 id="-atomic-css-https-github-com-nemophrost-atomic-css-"><a href="https://github.com/nemophrost/atomic-css">Atomic CSS</a></h4>
+<p>Breaking down styles into atomic, or indivisible, pieces</p>
+
+              </div>
+            </div>
+            <div class="grid__row">
+              <div class="grid__cell-xs_size_12 raw-text"><blockquote>
+<p>We are looking for authors to write proper &quot;<a href="https://github.com/getbem/getbem.com/issues/11">Comparison of methodologies</a>&quot;</p>
+</blockquote>
+<h2 id="why-bem-over-the-others-">Why BEM over the others?</h2>
+<p>No matter what methodology you choose to use in your projects, you will get advantages of structured CSS and UI. Some of them are less strict and more flexible, other is easier to understand and adapt in team. Instead of writing our opinion on BEM advantages, we leave you with some quotes about it:</p>
+
+              </div>
+            </div>
+            <div class="grid__row">
+              <div class="grid__cell-sm grid__cell-sm_size_6">
+                <blockquote class="blockquote">
+                  <p>The reason I choose BEM over other methodologies comes down to this: it's less confusing than the other methods (i.e. SMACSS) but still provides us the good architecture we want (i.e. OOCSS) and with a recognizable terminology.</p>
+                  <footer>Mark McDonnell, <a href="http://www.integralist.co.uk/posts/maintainable-css-with-bem/#why-bem-over-the-others">Maintainable CSS with BEM</a></footer>
+                </blockquote>
+              </div>
+              <div class="grid__cell-sm grid__cell-sm_size_6">
+                <blockquote class="blockquote">
+                  <p>I was so happy to start using this, finally I had an order in things, I had a clear system to name elements. It kind of freed a lot of resources in my brain, as puny thing as element naming can still occupy a lot of brainpower. Kinda.</p>
+                  <footer>Antti Hiljá, <a href="http://clubmate.fi/oocss-acss-bem-smacss-what-are-they-what-should-i-use/">OOCSS, ACSS, BEM, SMACSS: what are they? What should I use?</a></footer>
+                </blockquote>
+              </div>
+            </div>
+            <div class="grid__row">
+              <div class="grid__cell-sm grid__cell-sm_size_6">
+                <blockquote class="blockquote">
+                  <p>Unlike OOCss, it doesn’t aim at total modularity, but the opposite: namespacing (through classes names), creating independent modules of css code that don’t interact with each other.</p>
+                  <footer>Justin Marsan, <a href="http://justinmarsan.com/css-methodology-and-frameworks/">CSS methodology and frameworks</a></footer>
+                </blockquote>
+              </div>
+              <div class="grid__cell-sm grid__cell-sm_size_6">
+                <div class="blockquote">
+                  <p>BEM is a highly useful, powerful and simple naming convention to make your front-end code easier to read and understand, easier to work with, easier to scale, more robust and explicit and a lot more strict.</p>
+                  <footer>Harry Roberts, <a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">MindBEMding – getting your head ’round BEM syntax</a></footer>
+                </div>
+              </div>
+            </div>
+            <div class="grid__row">
+              <div class="grid__cell-sm grid__cell-sm_size_12 raw-text"><h2 id="blocks-elements-and-modifiers">Blocks, Elements and Modifiers</h2>
+<p>You will not be surprised, that BEM is abbreviation of the key elements of the methodology — Block, Element and Modifier. Strict rules of naming can be found in <a href="/naming">Naming</a> article.</p>
+
+              </div>
+            </div>
+            <div class="grid__row">
+              <div class="grid__cell-lg_size_4 grid__cell_left-border">
+                <div class="heading heading_level_1 heading_block">Block</div>
+                <div class="raw-text"><p>Standalone entity that is meaningful on its own.</p>
+<p><strong>Examples</strong></p>
+<p><code>header</code>, <code>container</code>, <code>menu</code>, <code>checkbox</code>, <code>input</code></p>
+
+                </div>
+              </div>
+              <div class="grid__cell-lg_size_4 grid__cell_left-border">
+                <div class="heading heading_level_1 heading_element">Element</div>
+                <div class="raw-text"><p>Parts of a block and have no standalone meaning. They are semantically tied to its block.</p>
+<p><strong>Examples</strong></p>
+<p><code>menu item</code>, <code>list item</code>, <code>checkbox caption</code>, <code>header title</code></p>
+
+                </div>
+              </div>
+              <div class="grid__cell-lg_size_4 grid__cell_left-border">
+                <div class="heading heading_level_1 heading_modifier">Modifier</div>
+                <div class="raw-text"><p>Flags on blocks or elements. Use them to change appearance or behavior.</p>
+<p><strong>Examples</strong></p>
+<p><code>disabled</code>, <code>highlighted</code>, <code>checked</code>, <code>fixed</code>, <code>size big</code>, <code>color yellow</code></p>
+
+                </div>
+              </div>
+            </div>
+            <div class="grid__row">
+              <div class="grid__cell-sm grid__cell-sm_size_12 text_align_center"><img src="/img/github_captions.jpg" class="github"></div>
+            </div>
+            <div class="grid__row">
+              <div class="grid__cell-sm grid__cell-sm_size_12 raw-text"><h2 id="under-the-hood">Under the hood</h2>
+<p>Lets look how one particular element on page can be implemented in BEM. We will take <code>button</code> from <a href="https://github.com/styleguide/css/1.0">GitHub styleguide</a>:</p>
+
+                <p style="text-align: center; padding: 30px 0;"><img src="/img/github_buttons.jpg"></p><p>We can have normal button for usual cases, and two more states for different ones. Because of BEM style blocks by class selectors, we can implement blocks with any tags we want (<code>button</code>, <code>a</code> or even <code>div</code>). Naming invites us to use <code>block__modifier_value</code> syntax.</p>
+
+              </div>
+            </div>
+            <div class="grid__row">
+              <div class="grid__cell-sm grid__cell-sm_size_6 raw-text">
+                <h5>HTML</h5><pre><code class="lang-html">&lt;button class=&quot;button&quot;&gt;
+  Normal button
+&lt;/button&gt;
+
+&lt;button class=&quot;button button_state_success&quot;&gt;
+  Success button
+&lt;/button&gt;
+
+&lt;button class=&quot;button button_state_danger&quot;&gt;
+  Danger button
+&lt;/button&gt;
+</code></pre>
+
+              </div>
+              <div class="grid__cell-sm grid__cell-sm_size_6 raw-text">
+                <h5>CSS</h5><pre><code class="lang-css">.button {
+  display: inline-block;
+  border-radius: 3px;
+  padding: 7px 12px;
+  border: 1px solid #D5D5D5;
+  background-image: linear-gradient(#EEE, #DDD);
+  font: 700 13px/18px Helvetica, arial;
+}
+
+.button_state_success {
+  color: #FFF;
+  background: #569E3D linear-gradient(#79D858, #569E3D) repeat-x;
+  border-color: #4A993E;
+}
+
+.button_state_danger {
+  color: #900;
+}
+</code></pre>
+
+              </div>
+            </div>
+            <div class="grid__row">
+              <div class="grid__cell-sm grid__cell-sm_size_12 raw-text"><h3 id="further-reading">Further Reading</h3>
+<p>For more examples of building BEM blocks you can read &quot;<a href="http://www.bluegg.co.uk/building-my-health-skills-part-3/">Building My Health Skills — Part 3</a>&quot; by Hamish Taplin.</p>
+
+              </div>
+            </div>
+            <div class="grid__row">
+              <div class="grid__cell-sm grid__cell-sm_size_12 raw-text"><h2 id="benefits">Benefits</h2>
+
+              </div>
+            </div>
+            <div class="grid__row">
+              <div class="grid__cell-sm grid__cell-sm_size_4 raw-text"><h3 id="modularity">Modularity</h3>
+<p>Blocks styles should not have dependencies on other elements on a page, therefore you will never get <a href="http://www.phase2technology.com/blog/used-and-abused-css-inheritance-and-our-misuse-of-the-cascade/">problems from cascading</a>.</p>
+<p>This also gives you ability to transfer blocks from ready project to new one.</p>
+
+              </div>
+              <div class="grid__cell-sm grid__cell-sm_size_4 raw-text"><h3 id="reusability">Reusability</h3>
+<p>Composing independent blocks in a different way and reusing them reduces amount of CSS code, that you will maintain.</p>
+<p>If you have design guidelines, then it is super effective to have ready Blocks library.</p>
+
+              </div>
+              <div class="grid__cell-sm grid__cell-sm_size_4 raw-text"><h3 id="structure">Structure</h3>
+<p>BEM methodology gives you simple and understandable structure in your CSS code.</p>
+<p>We wrote <a href="/building/">Building</a> article, that contains straightforward way of storing this structure on file system and a way to build it.</p>
+
+              </div>
+            </div>
+            <div class="grid__row">
+              <div class="grid__cell-sm grid__cell-sm_size_12 raw-text"><h2 id="case-study">Case study</h2>
+<p>We are looking forward to writing &quot;How to migrate existing project to BEM&quot;. In meanwhile you can watch nice presentation by Nicole Sullivan — &quot;<a href="http://www.youtube.com/watch?v=0NDyopLKE1w">CSS preprocessor performance</a>&quot;. It gives a very good explanation of problems, that she meets in major of sites and ways to track and handle them.</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid__cell-md grid__cell-md_size_3">
+          <div data-spy="affix" data-offset-top="50" data-offset-bottom="200" class="affix__menu hidden-xs hidden-sm">
+            <ul class="nav nav_pills nav_stacked">
+              <li class="nav__item nav__item_active"><a href="#introduction" class="nav__link">Introduction</a></li>
+              <li class="nav__item"><a href="#methodologies" class="nav__link">Methodologies</a></li>
+              <li class="nav__item"><a href="#why-bem-over-the-others-" class="nav__link">Why BEM over the others?</a></li>
+              <li class="nav__item"><a href="#blocks-elements-and-modifiers" class="nav__link">Blocks, Elements and Modifiers</a></li>
+              <li class="nav__item"><a href="#under-the-hood" class="nav__link">Under the hood</a></li>
+              <li class="nav__item"><a href="#benefits" class="nav__link">Benefits</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script id="github-bjs" async defer src="https://buttons.github.io/buttons.js"></script>
+  <div class="grid grid_fixed">
+    <div class="grid__row">
+      <div class="grid__cell-lg grid__cell-lg_size_12">
+        <div class="footer text_align_center">
+          <ul class="list list_unstyled list_inline">
+            <li class="list__item"><span data-user="getbem" data-repo="getbem.com" data-type="watch" data-count="1" class="github-btn hide"></span></li>
+            <li class="list__item"><span data-user="getbem" data-repo="getbem.com" data-type="fork" data-count="1" class="github-btn hide"></span></li>
+            <li class="list__item footer__follow-fix"><a href="https://twitter.com/getbem" data-show-count="true" data-dnt="true" class="twitter-follow-button">Follow @getbem</a>
+            </li>
+            <li class="list__item"><a href="https://twitter.com/share" data-via="getbem" data-related="getbem" data-hashtags="b_" data-dnt="true" class="twitter-share-button">Tweet</a>
+            </li>
+          </ul><p>Brought to you by <a href="https://github.com/floatdrop">@floatdrop</a> and <a href="https://github.com/matmuchrapna">@matmuchrapna</a>.<br>Maintained by the <a href="https://github.com/orgs/getbem/people">core team</a> with the help of our <a href="https://github.com/getbem/getbem.com/graphs/contributors">contributors</a>.<br>Code licensed under <a href="https://github.com/getbem/getbem.com/blob/master/LICENSE.md">MIT</a>, documentation under <a href="https://github.com/getbem/getbem.com/blob/master/levels/pages/LICENSE.md">CC BY 3.0</a>.</p>
+
+          <ul class="list list_unstyled list_inline">
+            <li class="list__item"><a href="https://twitter.com/getbem">Twitter</a></li>
+            <li class="list__item"><a href="https://github.com/getbem/getbem.com/">GitHub</a></li>
+            <li class="list__item"><a href="https://github.com/getbem/getbem.com/issues">Issues</a></li>
+            <li class="list__item"><a href="https://github.com/getbem/getbem.com/issues/8">Project goals</a></li>
+            <li class="list__item"><a href="https://github.com/getbem/getbem.com/issues/1">Are you using BEM?</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/index.js"></script>
+</html>

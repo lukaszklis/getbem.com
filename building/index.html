@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BEM — Building</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="BEM — Block Element Modifier is a methodology, that helps you to achieve reusable components and code sharing in the front-end.">
+    <meta name="keywords" content="BEM, HTML, CSS, JS, JavaScript, framework, front-end, frontend, web development, code sharing, components, blocks, bower">
+    <meta name="author" content="Vsevolod Strukchinsky, Vladimir Starkov and contributors.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@getbem">
+    <link rel="stylesheet" href="/building.css">
+    <meta name="og:image" content="http://getbem.com/img/bem_black.png"/>
+    <meta name="og:url" content="http://getbem.com/building/"/>
+    <meta name="og:title" content="BEM — Building"/>
+    <meta name="og:description" content="When you are building up a website that contains more than one page — you will soon feel that storing all CSS in a single `index.css` file is a huge pain. When the file becomes larger than __1000__ lines of code, you won't be able to either effectively navigate it or keep maintaining it."/>
+  </head>
+  <body data-spy="scroll" data-target=".affix__menu" class="page"><a href="https://github.com/getbem/getbem.com" title="Fork getbem.com on GitHub" class="fork"><img src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" class="fork__image"/></a>
+    <div role="navigation" class="navbar navbar_theme_default navbar_static-top">
+      <div class="grid grid_fixed">
+        <div class="navbar__header">
+          <button data-toggle="collapse" data-target="#menu" class="navbar__toggler">
+            <div class="sr-only">Toggle navigation</div><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button><a href="/" class="navbar__brand">Get BEM</a>
+        </div>
+        <div id="menu" class="navbar__collapse collapse">
+          <ul class="nav navbar__nav">
+            <li class="nav__item"><a href="/introduction/" class="nav__link">Introduction</a></li>
+            <li class="nav__item"><a href="/naming/" class="nav__link">Naming</a></li>
+            <li class="nav__item nav__item_active"><a href="/building/" class="nav__link">Building</a></li>
+            <li class="nav__item"><a href="/faq/" class="nav__link">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid_fixed">
+      <div class="grid__row">
+        <div class="grid__cell-sm grid__cell-sm_size_12">
+          <div class="heading heading_level_1">
+            <h1 id="file-system" class="heading heading_level_1 heading_inline heading_wrapped">File system</h1><a href="https://github.com/getbem/getbem.com/edit/master/levels/pages/building/building.jade" class="badge badge_theme_text">Improve this article</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid_fixed">
+      <div class="grid__row">
+        <div class="grid__cell-xs grid__cell-xs_size_12 raw-text"><p>When you are building up a website that contains more than one page — you will soon feel that storing all CSS in a single <code>index.css</code> file is a huge pain. When the file becomes larger than <strong>1000</strong> lines of code, you won&#39;t be able to either effectively navigate it or keep maintaining it.</p>
+<p>Things are getting worse when you have a team that makes changes in that single file. You will often get merge conflicts (if you are using VCS). Sometimes styles that depend on each other will appear on the opposite sides of this file.</p>
+<p>And the most painful part is transferring common parts of this file into another (often new) project.</p>
+<p>We propose an easy and intuitive way to structure your BEM CSS code in the filesystem that will solve these problems.</p>
+<p>If you have read the <a href="/naming/">Naming</a> article, you already know that every independent entity on the website will be represented as a <strong>Block</strong> with <strong>Elements</strong> that can have <strong>Modifiers</strong>. Keeping that in mind we will split our <code>index.css</code> into multiple CSS files on the filesystem. For each BEM entity we will create some files and place them to their own directories:</p>
+
+        </div>
+      </div>
+      <div class="grid__row">
+        <div class="grid__cell-sm grid__cell-sm_size_4 grid__block-cell raw-text">
+          <div class="heading heading_level_3">Blocks</div>
+          <p>Each block will have its own directory and styles file:</p>
+          <div class="types">
+            <div class="types__d_b">block/</div>
+            <div class="types__f_b">  block.css</div>
+          </div>
+          <p>New blocks should have their own directories:</p>
+          <div class="types">
+            <div class="types__d_b">block/</div>
+            <div class="types__f_b">  block.css</div>
+            <div class="types__d_b">footer/</div>
+            <div class="types__f_b">  footer.css</div>
+          </div>
+        </div>
+        <div class="grid__cell-sm grid__cell-sm_size_4 grid__element-cell raw-text">
+          <div class="heading heading_level_3">Elements</div>
+          <p>Since elements can't appear outside of the blocks — we will place them in subdirectories of the block directory:</p>
+          <div class="types">
+            <div class="types__d_b">block/</div>
+            <div class="types__d_e">  __element/</div>
+            <div class="types__f_e">    block__element.css</div>
+            <div class="types__f_b">  block.css</div>
+          </div>
+          <p>or multiple elements:</p>
+          <div class="types">
+            <div class="types__d_b">block/</div>
+            <div class="types__d_e">  __one/</div>
+            <div class="types__f_e">    block__one.css</div>
+            <div class="types__d_e">  __two/</div>
+            <div class="types__f_e">    block__two.css</div>
+            <div class="types__f_b">block.css</div>
+          </div>
+        </div>
+        <div class="grid__cell-sm grid__cell-sm_size_4 grid__modifier-cell raw-text">
+          <div class="heading heading_level_3">Modifiers</div>
+          <p>Both blocks and elements can have modifiers, so they can be placed either in the block directory:</p>
+          <div class="types">
+            <div class="types__d_b">block/</div>
+            <div class="types__d_m">  _mod/</div>
+            <div class="types__f_m">    block_mod_value.css</div>
+            <div class="types__f_b">block.css</div>
+          </div>
+          <p>or the element subdirectory:</p>
+          <div class="types">
+            <div class="types__d_b">block/</div>
+            <div class="types__d_e">  __element/</div>
+            <div class="types__d_m">    _mod/</div>
+            <div class="types__f_m">      block__element_mod.css</div>
+            <div class="types__f_e">    block__element.css</div>
+            <div class="types__f_b">  block.css</div>
+          </div>
+        </div>
+      </div>
+      <div class="grid__row">
+        <div class="grid__cell-xs grid__cell-xs_size_12 raw-text"><p><br/>
+Using this structure you will get less merge conflicts and it &#39;ll be quite easy to copy some blocks from one project to another (you just need to copy the entire directory). There is another useful abstraction that will help you to develop libraries of blocks. We call it <code>Levels</code> — directories that contain blocks. Quite intuitive thing to do, right?</p>
+<h2 id="levels">Levels</h2>
+
+        </div>
+      </div>
+      <div class="grid__row">
+        <div class="grid__cell-sm grid__cell-sm_size_8 raw-text"><p>When you have established the styleguide, it is quite nice to have a ready-to-go directory with blocks that can be downloaded to the new project and used as <strong>base</strong> styles for development. We recommend to create multiple levels for one project. For example, we will have a <code>base</code> directory with our style-guided blocks and a <code>project</code> directory containing blocks for our project. Blocks in levels can be extended with styles defined in other levels.</p>
+<p>The order of extending is defined by the order of levels (for example, in the build configuration). Since «C» in CSS stands for &quot;Cascading&quot; — concatenation of CSS files in the right order will result in extending the styles.</p>
+
+        </div>
+        <div class="grid__cell-sm grid__cell-sm_size_4 raw-text">
+          <div class="types">base/
+            <div class="types__d_b">  header/</div>
+            <div class="types__f_b">    header.css</div>
+            <div class="types__d_b">  footer/</div>
+            <div class="types__f_b">    footer.css</div>project/
+            <div class="types__d_b">  header/</div>
+            <div class="types__f_b">    header.css</div>
+          </div>
+        </div>
+      </div>
+      <div class="grid__row">
+        <div class="grid__cell-xs grid__cell-xs_size_12 raw-text"><h2 id="building">Building</h2>
+<p>After you move your CSS from a single <code>index.css</code> file to a hierarchy of separate CSS files you&#39;ll probably want to build them back together so your HTML won&#39;t be bloated with <code>&lt;style&gt;</code> tags.</p>
+<p>We will demonstrate how to build CSS files with <a href="http://gulpjs.com">gulpjs</a>, but feel free to choose your own build tool, because it is quite trivial to concatenate files even using a <code>bash</code> script.</p>
+
+        </div>
+      </div>
+      <div class="grid__row">
+        <div class="grid__cell-sm grid__cell-sm_size_4 raw-text"><h3 id="1-install-modules">1. Install modules</h3>
+<pre><code class="lang-bash">npm install gulp -g
+npm install gulp gulp-concat
+</code></pre>
+
+        </div>
+        <div class="grid__cell-sm grid__cell-sm_size_4 raw-text"><h3 id="2-create-gulpfile-js-">2. Create <code>gulpfile.js</code></h3>
+<pre><code class="lang-js">var gulp = require(&#39;gulp&#39;);
+var concat = require(&#39;gulp-concat&#39;);
+var levels = [
+  &#39;base/**/*.css&#39;,
+  &#39;project/**/*.css&#39;
+];
+
+gulp.task(&#39;build&#39;, function () {
+    gulp.src(levels)
+        .pipe(concat(&#39;index.css&#39;))
+        .pipe(gulp.dest(&#39;dist&#39;));
+});
+</code></pre>
+
+        </div>
+        <div class="grid__cell-sm grid__cell-sm_size_4 raw-text"><h3 id="3-run-the-build-task">3. Run the build task</h3>
+<pre><code class="lang-bash">gulp build
+</code></pre>
+
+        </div>
+      </div>
+      <div class="grid__row">
+        <div class="grid__cell-xs grid__cell-xs_size_12 raw-text"><br><p>Congradulations! You should get the <code>index.css</code> file with all styles in the <code>dist</code> directory.</p>
+<p>While building CSS is straight forward, JavaScript and Templates is a bit more complex subject. There are some tools that can help you to build projects structured in layers and blocks (like <a href="https://github.com/floatdrop/gulp-bem">gulp-bem</a>).</p>
+<p>You can look at how this site is built. We are using Jade for templates and <a href="https://github.com/floatdrop/gulp-bem-pack">gulp-bem-pack</a> for JavaScript. Dive into the site repository — <a href="https://github.com/getbem/getbem.com">https://github.com/getbem/getbem.com</a>.</p>
+
+        </div>
+      </div>
+    </div>
+  </body>
+  <script id="github-bjs" async defer src="https://buttons.github.io/buttons.js"></script>
+  <div class="grid grid_fixed">
+    <div class="grid__row">
+      <div class="grid__cell-lg grid__cell-lg_size_12">
+        <div class="footer text_align_center">
+          <ul class="list list_unstyled list_inline">
+            <li class="list__item"><span data-user="getbem" data-repo="getbem.com" data-type="watch" data-count="1" class="github-btn hide"></span></li>
+            <li class="list__item"><span data-user="getbem" data-repo="getbem.com" data-type="fork" data-count="1" class="github-btn hide"></span></li>
+            <li class="list__item footer__follow-fix"><a href="https://twitter.com/getbem" data-show-count="true" data-dnt="true" class="twitter-follow-button">Follow @getbem</a>
+            </li>
+            <li class="list__item"><a href="https://twitter.com/share" data-via="getbem" data-related="getbem" data-hashtags="b_" data-dnt="true" class="twitter-share-button">Tweet</a>
+            </li>
+          </ul><p>Brought to you by <a href="https://github.com/floatdrop">@floatdrop</a> and <a href="https://github.com/matmuchrapna">@matmuchrapna</a>.<br>Maintained by the <a href="https://github.com/orgs/getbem/people">core team</a> with the help of our <a href="https://github.com/getbem/getbem.com/graphs/contributors">contributors</a>.<br>Code licensed under <a href="https://github.com/getbem/getbem.com/blob/master/LICENSE.md">MIT</a>, documentation under <a href="https://github.com/getbem/getbem.com/blob/master/levels/pages/LICENSE.md">CC BY 3.0</a>.</p>
+
+          <ul class="list list_unstyled list_inline">
+            <li class="list__item"><a href="https://twitter.com/getbem">Twitter</a></li>
+            <li class="list__item"><a href="https://github.com/getbem/getbem.com/">GitHub</a></li>
+            <li class="list__item"><a href="https://github.com/getbem/getbem.com/issues">Issues</a></li>
+            <li class="list__item"><a href="https://github.com/getbem/getbem.com/issues/8">Project goals</a></li>
+            <li class="list__item"><a href="https://github.com/getbem/getbem.com/issues/1">Are you using BEM?</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/index.js"></script>
+</html>

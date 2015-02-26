@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BEM — FAQ</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="BEM — Block Element Modifier is a methodology, that helps you to achieve reusable components and code sharing in the front-end.">
+    <meta name="keywords" content="BEM, HTML, CSS, JS, JavaScript, framework, front-end, frontend, web development, code sharing, components, blocks, bower">
+    <meta name="author" content="Vsevolod Strukchinsky, Vladimir Starkov and contributors.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@getbem">
+    <link rel="stylesheet" href="/faq.css">
+    <meta name="og:image" content="http://getbem.com/img/bem_black.png"/>
+    <meta name="og:url" content="http://getbem.com/faq/"/>
+    <meta name="og:title" content="BEM — FAQ"/>
+    <meta name="og:description" content="Here we are working on Frequently Asked Question list."/>
+  </head>
+  <body data-spy="scroll" data-target=".affix__menu" class="page"><a href="https://github.com/getbem/getbem.com" title="Fork getbem.com on GitHub" class="fork"><img src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" class="fork__image"/></a>
+    <div role="navigation" class="navbar navbar_theme_default navbar_static-top">
+      <div class="grid grid_fixed">
+        <div class="navbar__header">
+          <button data-toggle="collapse" data-target="#menu" class="navbar__toggler">
+            <div class="sr-only">Toggle navigation</div><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button><a href="/" class="navbar__brand">Get BEM</a>
+        </div>
+        <div id="menu" class="navbar__collapse collapse">
+          <ul class="nav navbar__nav">
+            <li class="nav__item"><a href="/introduction/" class="nav__link">Introduction</a></li>
+            <li class="nav__item"><a href="/naming/" class="nav__link">Naming</a></li>
+            <li class="nav__item"><a href="/building/" class="nav__link">Building</a></li>
+            <li class="nav__item nav__item_active"><a href="/faq/" class="nav__link">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid_fixed">
+      <div class="grid__row">
+        <div class="grid__cell-sm grid__cell-sm_size_12">
+          <div class="heading heading_level_1">
+            <h1 id="faq" class="heading heading_level_1 heading_inline heading_wrapped">FAQ</h1><a href="https://github.com/getbem/getbem.com/edit/master/levels/pages/faq/faq.jade" class="badge badge_theme_text">Improve this article</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid_fixed">
+      <div class="grid__row">
+        <div class="grid__cell-xs grid__cell-xs_size_12 raw-text"><p>We are working on Frequently Asked Question list <a href="https://docs.google.com/document/d/1KD9tNdArCv1U1NvFX7rYPvUdbpPGVkuPZ2723KW5p4Y">here</a> — fear not, it will be translated from Russian to English before publishing.</p>
+
+          <ul>
+            <li><a href="#why-bem">Why should I choose BEM and not another CSS modular solution?</a></li>
+            <li><a href="#why-the-modifier-classes-are-prefixed">Why the modifier CSS classes are not represented as a combined selector?</a></li>
+            <li><a href="#custom-tags-for-blocks">Why do I need CSS classes for block instead of using semantic custom tags?</a></li>
+            <li><a href="#block-modifier-mix">Why do I need to combine block and prefixed modifier class for a modified block?</a></li>
+            <li><a href="#can-i-create-global-modifier">Can I create a global modifier applicable to any block?</a></li>
+            <li><a href="#encapsulating-tag-selector">Can I combine a tag and a class in selector like button.button?</a></li>
+            <li><a href="#css-modifier-names">Is this good to name modifiers corresponding to what they have in CSS? Like `.block__element_border-bottom_5px`.</a></li>
+            <li><a href="#css-nested-elements">What would be a class name for an element inside another element?</a></li>
+            <li><a href="#ask-you-question">Did not find the answer?</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid_fixed">
+      <div class="grid__row">
+        <div class="grid__cell-xs grid__cell-xs_size_12"><a id="why-bem"></a>
+          <div class="raw-text"><h2 id="why-should-i-choose-bem-as-a-modular-solution-for-css-">Why should I choose BEM as a modular solution for CSS?</h2>
+<blockquote>
+<p>There are some other modular solutions for CSS (such as OOCSS, AMCSS, SMACSS, SUITCSS). What are the
+reasons to choose BEM?</p>
+</blockquote>
+<p>BEM provides solutions for all the frontend technologies: CSS, JavaSript, templating; and also for building process
+of your web application. The methodology is applicable anywhere. However, to apply this in JavaScript and templating
+you would need special frameworks whereas in CSS you may just follow the methodological recommendations. The CSS part
+of BEM is the easiest to take into your development process. This is why many use only it. On the other hand, if lately
+you would found your project fully BEMed (in CSS) and yourself happy for its grown maintenance, you probably would
+take next step in modularazing your web application. BEM CSS will be easier to coordinate with modular JavaScript and
+blocks-based project file structure.</p>
+<p>If speaking about CSS modular solutions only, the key feature of BEM is block&#39;s independency. Following the CSS
+recomentations enables to put a block into any place on a page and be sure that is won&#39;t be affected by its
+surrounders. Also, if you would lately need to nest another block into the current one, their full compatibility is
+guaranteed. In other words, when maintaining your web application you would be able to move blocks across the page,
+add others and combine them.</p>
+<p>BEM CSS unambiguously defines which CSS belongs to a piece of interface and so usign it gives answers to questions
+&quot;Can I remove this piece of code?&quot; and &quot;What happens and which interface parts will be affected if I change this piece
+of code?&quot;.</p>
+
+          </div><a id="why-the-modifier-classes-are-prefixed"></a>
+          <div class="raw-text"><h2 id="why-the-modifier-css-classes-are-not-represented-as-a-combined-selector-">Why the modifier CSS classes are not represented as a combined selector?</h2>
+<blockquote>
+<p>BEM recommends to modify blocks like this <code>&lt;div class=&quot;block block_mod&quot;&gt;</code>. Why not to use the simple version like <code>&lt;div class=&quot;block mod&quot;&gt;</code>? Since we now have combined selectors <code>.block.mod</code>, it&#39;s easy to define all the CSS properties to it.</p>
+</blockquote>
+<p>The recommendation to prefix modifier CSS class with its block name has multiple reasons.</p>
+<p>Firstly, since it is possible to mix several blocks and elements at the same DOM node, we need to ensure that a modifier would affect only
+the block it belongs to. Let&#39;s say that we have a menu item element and a button mixed together. In HTML this construction is represented
+by the following markup:</p>
+<pre><code class="lang-html">&lt;div class=&quot;menu__item button&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>In this case adding <code>.active</code> modifier to them would affect both.</p>
+<pre><code class="lang-html">&lt;div class=&quot;menu__item button active&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>All the 3 sit at the same DOM node, so it is imposible to differentiate if we mean <code>menu__item.active</code> or <code>button.active</code>.
+Whereas in the prefixed case the naming <code>button_active</code> unambiguously says as that this is only the button that has to be
+affected.</p>
+<p>Another point is CSS specificity. The combined selectors are more specific (means more important) than single class selectors.
+This means that you might have trouble when redefining them with parent block code.</p>
+<pre><code class="lang-html">&lt;div class=&quot;header&quot;&gt;
+  &lt;button class=&quot;button active&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<p>If you are already having <code>.button.active</code> selector in code, the specificity of your redefining <code>.header .button</code> would be exactly
+the same as the specificity of modifier combined selector which makes you dependent on the order of the CSS rules
+declared. Whereas in case of using a prefixed modifier you can always be sure that the cascade selector <code>.header .button</code> will
+overwrite the <code>.button_active</code> modifier.</p>
+<p>This makes life easier especially for maintainable projects.</p>
+<p>The third point is that looking at the <code>&lt;div class=&quot;block block_mod&quot;&gt;</code> markup you can clearly see the block structure. It is easy
+to recognize that we are having a block and its modifier and there is no different interpretations here. Unfortunately a grasp onto
+<code>&lt;div class=&quot;block mod&quot;&gt;</code> code does not give such information. Depending on what are the exact CSS classes sometimes it is impossible
+to recognize if we are having a block and a modifier or a mix of 2 blocks here. This might be even more confusing if the names of the
+entities are complex or contracted/abbreviated (which sometimes happens in big projects).<br/>
+Clear understanding of a block structure especially helps in looking for corresponding code on a file system.</p>
+<p>You will also appreciate <code>.block_mod</code> practice when refactoring and use global search over all your project files. Imagine the
+same looking for not-prefixed <code>.mod</code> and all the HTML pieces it might be in.</p>
+<p>And lastly, from a development process standpoint the difference between <code>.block.mod</code> and <code>.block_mod</code> is only one symbol. Using
+<code>-</code> instead of <code>.</code> costs nothing but it brings all the benefits listed above. Moreover, since pre-processor began to support BEM
+notation, it is pretty natural to write <code>&amp;_mod</code> there and finally get a modifier declared as it was recommended.</p>
+
+          </div><a id="custom-tags-for-blocks"></a>
+          <div class="raw-text"><h2 id="why-do-i-need-css-classes-for-block-instead-of-using-semantic-custom-tags-">Why do I need CSS classes for block instead of using semantic custom tags?</h2>
+<blockquote>
+<p>Blocks can be represented as custom tags which we may define CSS rules for. Looks like we do not need CSS classes for blocks
+at all. They can be used for modifiers only, like <code>&lt;button class=&quot;mod&quot;/&gt;</code>.</p>
+</blockquote>
+<p>Using custom tags as block selectors is indeed one of the BEMish solutions and can be used. However this variant is less
+flexible than the recommended &quot;class&quot; approach.</p>
+<p>This is more likely that you would need to prefix modifier classes with their block name to provide them namespace.
+The details are uncovered in <a href="#why-the-modifier-classes-are-prefixed">&quot;Why the modifier CSS classes are prefixed with their parent block name?&quot;</a>
+question. So, finally the custom-tag version of a block is like <code>&lt;block class=&quot;block_mod&quot;/&gt;</code>. This does not look
+very different from <code>&lt;div class=&quot;block block_mod&quot;&gt;</code> especially assuming that being tag-independent you can use any
+custom node and stay with <code>&lt;block class=&quot;block block_mod&quot;&gt;</code>.</p>
+<p>Second drawback is that &quot;tag&quot; version makes using the mixes of blocks impossible whereas the &quot;class&quot; version
+represent that naturally by <code>&lt;div class=&quot;block1 block2&quot;&gt;</code>.</p>
+<p>And the last clench against such an approach is that in many cases you are not able to represent your blocks with
+custom tags at all. For a <code>link</code> block you definitely need <code>&lt;a&gt;</code> tag, and the same for <code>&lt;input&gt;</code>.</p>
+
+          </div><a id="block-modifier-mix"></a>
+          <div class="raw-text"><h2 id="why-do-i-need-to-combine-block-and-prefixed-modifier-class-for-a-modified-block-">Why do I need to combine block and prefixed modifier class for a modified block?</h2>
+<blockquote>
+<p>Why does both block&#39;s and modifier&#39;s class sit together in the modified block like <code>&lt;div class=”block block_mod”&gt;</code>?
+Everything about a modified block can be decribed in <code>.block_mod</code>. If there is something common between 2 modifiers,
+it&#39;s possible to use preprocessor&#39;s mixins to avoid copy-paste.</p>
+</blockquote>
+<p>This approach is possible thanks to preprocessors. However it brings some drawbacks which you should be aware of.</p>
+<p>In case of combining 2 or more modifiers at the same block <code>&lt;div class=&quot;block_theme_christmas block_size_big&quot;&gt;</code> you
+would get the core block&#39;s styles twice. However this depends on the preprocessor algorythms.</p>
+<p>When operating modifiers dynamically with JavaScript, additional modifier is more handy. Switching it off would mean
+only removing one CSS class from the DOM node with no need to add the core block CSS class back as it sits there forever.</p>
+
+          </div><a id="can-i-create-global-modifier"></a>
+          <div class="raw-text"><h2 id="can-i-create-a-global-modifier-applicable-to-any-block-">Can I create a global modifier applicable to any block?</h2>
+<blockquote>
+<p>I&#39;ve heard that global modifiers like <code>visible</code>, <code>invisible</code>, <code>red</code>, <code>opacity50</code> are not welcomed in BEM. Why?
+I think it is useful to incorporate common properties like this in such a global class and then apply it to different blocks.</p>
+</blockquote>
+<p>Indeed you can have 2 main CSS classes at the same DOM node. In BEM we call it <code>mix</code>:</p>
+<pre><code class="lang-html">&lt;div class=&quot;block1 block2&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>But important thing about it is that both <code>block1</code> and <code>block2</code> should be standalone blocks. This is slightly different
+from what people usually mean by &quot;global modifiers&quot; as modifiers do not have any sense on they own and are just a set
+of properties to change.</p>
+<pre><code class="lang-html">&lt;div class=&quot;block globalmod&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>If you think that in your case you would have a global modifier, these are the problems you may face:</p>
+<p>First of all the specificity problem appears. In a local modifier case CSS code goes like this:</p>
+<pre><code class="lang-css">.block {
+  display: block;
+}
+.block_hidden {
+  display: none;
+}
+</code></pre>
+<p>Both block and modifier selectors have the same specificity. As modifier declaration goes after the block, it redefines the CSS
+properties. These styles belong to block and are stored in the block file. Thus, independently on how the resultant CSS is built
+from source, you will always have them in this order and be sure that redefining happens.</p>
+<p>In the case of global modifier, its properties can be redefined by the blocks if they follow modifiers in code:</p>
+<pre><code class="lang-css">.hidden { display: none }
+/* ... */
+.block { display: block }
+</code></pre>
+<pre><code class="lang-html">&lt;div class=&quot;block hidden&quot;&gt;you still see me&lt;/div&gt;
+</code></pre>
+<p>One of the possible solutions to this problem is to raise the selector specificity of global modifiers by adding <code>!important</code> to them.
+But in this case any side-effects of such a global modifier might be overwritten only by declarations with the same <code>!important</code>
+instruction.</p>
+<p>Another way is to load global modifier CSS after al the other styles. But in this case you are not able any more to use <em>lazy
+loading</em> strategy for your components. The additional lazy CSS will still be loaded after the modifiers and you get the same problem.</p>
+<p>The next problem is combination of several global modifiers at the same block.</p>
+<pre><code class="lang-html">&lt;div class=&quot;block mod1 mod2&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>In this case you absolutely have no control over the block. The order of modifiers in code can be different. If it conflicts
+with other declarations, changing the order can fix this conflict but lead to another one. The only way would be to redefine the mess
+in block. And don&#39;t forget about the <code>!important</code> to your hack.</p>
+<p>Also, depending on a block the same modifier can be implemented differently. Even the simple <code>.hidden</code> sometimes needs to be
+not <code>display: none</code> but <code>visibility: hidden</code> or even <code>position: absolute; left: -9999px</code> etc. And if you need to bring some changes
+into your block, it is much nicer not to waste time searching for all the places where this block can be combined with a global modifier.
+Espacially assuming that such dependencies usually are not described anywhere.</p>
+<p>All this hell can be avoided by encapsulating a modifier in a block like <code>.block_mod</code>.</p>
+<p>Indeed using global modifiers makes the resultant code less. However if you measure the real difference in bytes it usually does not
+seem that big. Especially if you are using CSS optimizer which can combine selectors.</p>
+
+          </div><a id="encapsulating-tag-selector"></a>
+          <div class="raw-text"><h2 id="can-i-combine-a-tag-and-a-class-in-selector-like-button-button-">Can I combine a tag and a class in selector like <code>button.button</code>?</h2>
+<blockquote>
+<p>I want to use selectors like <code>button.button</code> to encapsulate my blocks functionality within a particular tag.
+If lately someone else would use in their code <code>&lt;h2 class=&quot;button&quot;&gt;</code>, such an encapsulation would prevent
+a conflict.</p>
+</blockquote>
+<p>The CSS specificity of such a selector grows. <code>.button_mod</code> selector will not overwrite CSS properties of the block, only
+<code>button.button_mod</code> would work. You will need its modifiers to be combined with the tag as well and so do the developers
+who lately would redefine your block.</p>
+<p>Lately, when a project goes larger, it&#39;s very likely that you may have <code>input.button</code>, <code>span.button</code> and <code>a.button</code>
+as well. And all the prefixed selectors for modifiers and nested elements will need 4 declarations.</p>
+<p>So, it is better not to tie your own hands with such prefixing. However if you still can softly-softly ensure that
+your blocks are used with proper tags if your provide your users with templates for every block. This is the most
+flexible and automatic solution.</p>
+<p>If the templating looks overhead, the is a &quot;documentation&quot; approach to inform your users which tag the block CSS class
+would be applied to, this
+can be done with documenting the block code. The shortest version could be just a comment with a tag name prefixing
+the block declaration <code>/*button*/.button</code>. Or that can be a larger comment with full HTML piece needed to the
+block to function.</p>
+
+          </div><a id="css-modifier-names"></a>
+          <div class="raw-text"><h2 id="is-this-good-to-name-modifiers-corresponding-to-what-they-have-in-css-">Is this good to name modifiers corresponding to what they have in CSS?</h2>
+<blockquote>
+<p>Thanks to mixes, we can create a lot of modifiers which represent CSS properties and assign them to blocks.
+But I&#39;ve heard that &quot;it is bad&quot;. For example, this selector <code>.block__element_border-bottom_5px</code> was stamped as
+&quot;awful&quot;. I am wondering why and how should the modifiers be named then?</p>
+</blockquote>
+<p>Naming the modifiers corresponding to their CSS representation is not recommended. Indeed it looks not very nice but
+there are also practical reasons against it. Lately then the view of your components is changed, you will need to
+fix not only CSS but also the selectors. So, when you border is 6px, it would require changes in all the templates and
+sometimes in JavaScript.</p>
+<p>Also, it never happens that a modifier has only one CSS property to define and will have it forever. Even if now it is
+only border that differentiates one state from another, this is very likely that lately you would need other CSS properties
+for the same state of your block. This would be messy if you define a background or padding in a modifier called &quot;border&quot;.
+So, it is recommended to choose semantical names for modifiers even if they only have one property by now.</p>
+
+          </div><a id="css-nested-elements"></a>
+          <div class="raw-text"><h2 id="what-would-be-a-class-name-for-an-element-inside-another-element-">What would be a class name for an element inside another element?</h2>
+<blockquote>
+<p>What should I do if my block has a complex structure and its elements are nested?
+CSS classes like <code>block__elem1__elem2__elem3</code> look scaring.</p>
+</blockquote>
+<p>According to BEM method, block structure should be fallen; you do not need to reflect nested DOM structure of the block.
+So, the class names for this case would be:</p>
+<pre><code>.block{}
+.block__elem1{}
+.block__elem2{}
+.block__elem3{}
+</code></pre><p>Whereas the DOM representation of the block may be nested:</p>
+<pre><code>&lt;div class=&#39;block&#39;&gt;
+    &lt;div class=&#39;block__elem1&#39;&gt;
+        &lt;div class=&#39;block__elem2&#39;&gt;
+            &lt;div class=&#39;block__elem3&#39;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>Besides the fact that the classes look much nicer, it makes the elements be dependent on the block only. So, you can
+easily move them  across the block when providing changes to the interface. The changes of the block DOM structure
+would not need corresponding changes to the CSS code.</p>
+<pre><code>&lt;div class=&#39;block&#39;&gt;
+    &lt;div class=&#39;block__elem1&#39;&gt;
+        &lt;div class=&#39;block__elem2&#39;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#39;block__elem3&#39;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          </div><a id="ask-you-question"></a>
+          <div class="raw-text"><h2 id="did-not-find-the-answer-please-ask-your-question-don-t-be-shy-">Did not find the answer? Please ask your question, don&#39;t be shy.</h2>
+<p>If you didn&#39;t found the proper answer, please <a href="https://github.com/getbem/getbem.com/issues/new?title=Type+your+question&amp;body=Explain+in+detail+your+question&amp;labels=question">ask your question</a>!</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script id="github-bjs" async defer src="https://buttons.github.io/buttons.js"></script>
+  <div class="grid grid_fixed">
+    <div class="grid__row">
+      <div class="grid__cell-lg grid__cell-lg_size_12">
+        <div class="footer text_align_center">
+          <ul class="list list_unstyled list_inline">
+            <li class="list__item"><span data-user="getbem" data-repo="getbem.com" data-type="watch" data-count="1" class="github-btn hide"></span></li>
+            <li class="list__item"><span data-user="getbem" data-repo="getbem.com" data-type="fork" data-count="1" class="github-btn hide"></span></li>
+            <li class="list__item footer__follow-fix"><a href="https://twitter.com/getbem" data-show-count="true" data-dnt="true" class="twitter-follow-button">Follow @getbem</a>
+            </li>
+            <li class="list__item"><a href="https://twitter.com/share" data-via="getbem" data-related="getbem" data-hashtags="b_" data-dnt="true" class="twitter-share-button">Tweet</a>
+            </li>
+          </ul><p>Brought to you by <a href="https://github.com/floatdrop">@floatdrop</a> and <a href="https://github.com/matmuchrapna">@matmuchrapna</a>.<br>Maintained by the <a href="https://github.com/orgs/getbem/people">core team</a> with the help of our <a href="https://github.com/getbem/getbem.com/graphs/contributors">contributors</a>.<br>Code licensed under <a href="https://github.com/getbem/getbem.com/blob/master/LICENSE.md">MIT</a>, documentation under <a href="https://github.com/getbem/getbem.com/blob/master/levels/pages/LICENSE.md">CC BY 3.0</a>.</p>
+
+          <ul class="list list_unstyled list_inline">
+            <li class="list__item"><a href="https://twitter.com/getbem">Twitter</a></li>
+            <li class="list__item"><a href="https://github.com/getbem/getbem.com/">GitHub</a></li>
+            <li class="list__item"><a href="https://github.com/getbem/getbem.com/issues">Issues</a></li>
+            <li class="list__item"><a href="https://github.com/getbem/getbem.com/issues/8">Project goals</a></li>
+            <li class="list__item"><a href="https://github.com/getbem/getbem.com/issues/1">Are you using BEM?</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/index.js"></script>
+</html>

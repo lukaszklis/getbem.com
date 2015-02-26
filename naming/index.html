@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BEM — Naming</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="BEM — Block Element Modifier is a methodology, that helps you to achieve reusable components and code sharing in the front-end.">
+    <meta name="keywords" content="BEM, HTML, CSS, JS, JavaScript, framework, front-end, frontend, web development, code sharing, components, blocks, bower">
+    <meta name="author" content="Vsevolod Strukchinsky, Vladimir Starkov and contributors.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@getbem">
+    <link rel="stylesheet" href="/naming.css">
+    <meta name="og:image" content="http://getbem.com/img/bem_black.png"/>
+    <meta name="og:url" content="http://getbem.com/naming/"/>
+    <meta name="og:title" content="BEM — Naming"/>
+    <meta name="og:description" content="The BEM approach ensures that everyone who participates in the development of a website works with a single codebase and speaks the same language. Using proper naming will prepare you for the changes in design of the website."/>
+  </head>
+  <body data-spy="scroll" data-target=".affix__menu" class="page"><a href="https://github.com/getbem/getbem.com" title="Fork getbem.com on GitHub" class="fork"><img src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" class="fork__image"/></a>
+    <div role="navigation" class="navbar navbar_theme_default navbar_static-top">
+      <div class="grid grid_fixed">
+        <div class="navbar__header">
+          <button data-toggle="collapse" data-target="#menu" class="navbar__toggler">
+            <div class="sr-only">Toggle navigation</div><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button><a href="/" class="navbar__brand">Get BEM</a>
+        </div>
+        <div id="menu" class="navbar__collapse collapse">
+          <ul class="nav navbar__nav">
+            <li class="nav__item"><a href="/introduction/" class="nav__link">Introduction</a></li>
+            <li class="nav__item nav__item_active"><a href="/naming/" class="nav__link">Naming</a></li>
+            <li class="nav__item"><a href="/building/" class="nav__link">Building</a></li>
+            <li class="nav__item"><a href="/faq/" class="nav__link">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid_fixed">
+      <div class="grid__row">
+        <div class="grid__cell-sm grid__cell-sm_size_12">
+          <div class="heading heading_level_1">
+            <h1 id="naming" class="heading heading_level_1 heading_inline heading_wrapped">Naming</h1><a href="https://github.com/getbem/getbem.com/edit/master/levels/pages/naming/naming.jade" class="badge badge_theme_text">Improve this article</a>
+          </div>
+        </div>
+      </div>
+      <div class="grid__row">
+        <div class="grid__cell-sm grid__cell-sm_size_12 raw-text"><blockquote>
+<p>There are only two hard problems in Computer Science: cache invalidation and naming things — <em>Phil Karlton</em></p>
+</blockquote>
+<p>It is known fact, that right styleguide can significantly increase development speed, debugging and implementing new features in legacy code. Sadly, most CSS codebase is developed without (sometimes) any structure and naming conventions. This leads to unmaintainable CSS codebase in long term run.</p>
+<p>The BEM approach ensures that everyone who participates in the development of a website works with a single codebase and speaks the same language. Using proper naming will prepare you for the changes in design of the website.</p>
+
+        </div>
+      </div><br>
+      <div class="grid__row">
+        <div class="grid__cell-xs grid__cell-xs_size_12 grid__block-cell raw-text"><h2 id="block">Block</h2>
+<p>Encapsulates a standalone entity that is meaningful on its own. While blocks can be nested and interact with each other, semantically they remain equal; there is no precedence or hierarchy. Holistic entities without DOM representation (such as controllers or models) can be blocks as well.</p>
+
+        </div>
+      </div>
+      <div class="grid__row">
+        <div class="grid__cell-md grid__cell-md_size_4 grid__cell_left-border raw-text"><h4 id="naming">Naming</h4>
+<p>Block name may consist of Latin letters, digits, and dashes. To form a CSS class, add short prefix for namespacing: <code>.block</code></p>
+
+        </div>
+        <div class="grid__cell-md grid__cell-md_size_4 grid__cell_left-border raw-text"><h4 id="html">HTML</h4>
+<p>Any DOM node can be a block if it accepts a class name.</p>
+<pre><code class="lang-html">&lt;div class=&quot;block&quot;&gt;...&lt;/div&gt;
+</code></pre>
+
+        </div>
+        <div class="grid__cell-md grid__cell-md_size_4 grid__cell_left-border raw-text"><h4 id="css">CSS</h4>
+<ul>
+<li>Use class name selector only</li>
+<li>No tag names or id&#39;s</li>
+<li>No dependency on other blocks/elements on a page</li>
+</ul>
+<pre><code class="lang-css">.block { color: #042 }
+</code></pre>
+
+        </div>
+      </div>
+      <div class="grid__row">
+        <div class="grid__cell-xs grid__cell-xs_size_12 grid__element-cell raw-text"><h2 id="element">Element</h2>
+<p>Parts of a block and have no standalone meaning. Any element is semantically tied to its block.</p>
+
+        </div>
+      </div>
+      <div class="grid__row">
+        <div class="grid__cell-md grid__cell-md_size_4 grid__cell_left-border raw-text"><h4 id="naming">Naming</h4>
+<p>Element name may consist of Latin letters, digits, and dashes.
+CSS class is formed as block name plus two underscores plus element name:
+<code>.block__elem</code></p>
+
+        </div>
+        <div class="grid__cell-md grid__cell-md_size_4 grid__cell_left-border raw-text"><h4 id="html">HTML</h4>
+<p>Any DOM node within a block can be an element. Within a given block, all elements are semantically equal.</p>
+<pre><code class="lang-html">&lt;div class=&quot;block&quot;&gt;
+  ...
+  &lt;span class=&quot;block__elem&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+
+        </div>
+        <div class="grid__cell-md grid__cell-md_size_4 grid__cell_left-border raw-text"><h4 id="css">CSS</h4>
+<ul>
+<li>Use class name selector only</li>
+<li>No tag name or id&#39;s</li>
+<li>No dependency on other blocks/elements on a page</li>
+</ul>
+<p><strong>Good</strong></p>
+<pre><code class="lang-css">.block__elem { color: #042; }
+</code></pre>
+<p><strong>Bad</strong></p>
+<pre><code class="lang-css">.block .block__elem { color: #042; }
+div.block__elem { color: #042; }
+</code></pre>
+
+        </div>
+      </div>
+      <div class="grid__row">
+        <div class="grid__cell-xs grid__cell-xs_size_12 grid__modifier-cell raw-text"><h2 id="modifier">Modifier</h2>
+<p>Flags on blocks or elements. Use them to change appearance or behavior.</p>
+
+        </div>
+      </div>
+      <div class="grid__row">
+        <div class="grid__cell-md grid__cell-md_size_4 grid__cell_left-border raw-text"><h4 id="naming">Naming</h4>
+<p>Modifiers (both keys and values) may consist of Latin letters, digits, and dashes.</p>
+<p>Modifier can be a boolean flag or a key/value pair:</p>
+<p><strong>Boolean modifiers</strong><br>
+    Original block/element name + single underscore + mod name: <code>.block_mod</code> or <code>.block__elem_mod</code></p>
+<p> <strong>Key/value modifiers</strong><br>
+    Original block/element name + single underscore + mod key name + single underscore + mod value: <code>.block_key_value</code> or <code>.block__elem_key_value</code></p>
+
+        </div>
+        <div class="grid__cell-md grid__cell-md_size_4 grid__cell_left-border raw-text"><h4 id="html">HTML</h4>
+<p>Modifier is an extra class name which you add to a block/element DOM node. Add modifier classes only to blocks/elements they modify, and keep the original class:</p>
+<p><strong>Good</strong></p>
+<pre><code class="lang-html">&lt;div class=&quot;block block_mod&quot;&gt;...&lt;/div&gt;
+&lt;div class=&quot;block block_size_big block_shadow_yes&quot;&gt;...&lt;/div&gt;
+</code></pre>
+<p><strong>Bad</strong></p>
+<pre><code class="lang-html">&lt;div class=&quot;block_mod&quot;&gt;...&lt;/div&gt;
+</code></pre>
+
+        </div>
+        <div class="grid__cell-md grid__cell-md_size_4 grid__cell_left-border raw-text"><h4 id="css">CSS</h4>
+<p>Use modifier class name as selector:</p>
+<pre><code class="lang-css">.block_hidden { display: none }
+</code></pre>
+<p>To alter elements based on a block-level modifier:</p>
+<pre><code class="lang-css">.block_mod .block__elem { display: none }
+</code></pre>
+<p>Element modifier:</p>
+<pre><code class="lang-css">.block__elem_mod { display: none }
+</code></pre>
+
+        </div>
+      </div>
+      <div class="grid__row">
+        <div class="grid__cell-xs grid__cell-xs_size_12 raw-text"><h2 id="example">Example</h2>
+<p>Suppose you have block <code>form</code> with modifiers <code>theme: &#39;xmas&#39;</code> and <code>simple: true</code> and with elements <code>input</code> and <code>submit</code>, and element <code>submit</code> have it&#39;s own modifier <code>disabled: true</code> for not submitting form while it&#39;s not filled:</p>
+
+        </div>
+      </div>
+      <div class="grid__row">
+        <div class="grid__cell-md grid__cell-md_size_6 raw-text"><h4 id="html">HTML</h4>
+<pre><code class="lang-html">&lt;form class=&quot;form form_theme_xmas form_simple&quot;&gt;
+  &lt;input class=&quot;form__input&quot; type=&quot;text&quot; /&gt;
+  &lt;input
+    class=&quot;form__submit form__submit_disabled&quot;
+    type=&quot;submit&quot; /&gt;
+&lt;/form&gt;
+</code></pre>
+
+        </div>
+        <div class="grid__cell-md grid__cell-md_size_6 raw-text"><h4 id="css">CSS</h4>
+<pre><code class="lang-css">.form { /* ... */ }
+.form_theme_xmas { /* ... */ }
+.form_simple { /* ... */ }
+.form__input { /* ... */ }
+.form__submit { /* ... */ }
+.form__submit_disabled { /* ... */ }
+</code></pre>
+
+        </div>
+      </div>
+      <div class="authors">
+        <h1 class="authors__heading">Written by</h1>
+        <div class="author"><a href="https://github.com/ingdir" class="author__link"><img src="https://avatars2.githubusercontent.com/u/192221?s=140" class="img img_circle author__photo"/><span class="author__name">Max Shirshin</span></a></div>
+      </div>
+    </div>
+  </body>
+  <script id="github-bjs" async defer src="https://buttons.github.io/buttons.js"></script>
+  <div class="grid grid_fixed">
+    <div class="grid__row">
+      <div class="grid__cell-lg grid__cell-lg_size_12">
+        <div class="footer text_align_center">
+          <ul class="list list_unstyled list_inline">
+            <li class="list__item"><span data-user="getbem" data-repo="getbem.com" data-type="watch" data-count="1" class="github-btn hide"></span></li>
+            <li class="list__item"><span data-user="getbem" data-repo="getbem.com" data-type="fork" data-count="1" class="github-btn hide"></span></li>
+            <li class="list__item footer__follow-fix"><a href="https://twitter.com/getbem" data-show-count="true" data-dnt="true" class="twitter-follow-button">Follow @getbem</a>
+            </li>
+            <li class="list__item"><a href="https://twitter.com/share" data-via="getbem" data-related="getbem" data-hashtags="b_" data-dnt="true" class="twitter-share-button">Tweet</a>
+            </li>
+          </ul><p>Brought to you by <a href="https://github.com/floatdrop">@floatdrop</a> and <a href="https://github.com/matmuchrapna">@matmuchrapna</a>.<br>Maintained by the <a href="https://github.com/orgs/getbem/people">core team</a> with the help of our <a href="https://github.com/getbem/getbem.com/graphs/contributors">contributors</a>.<br>Code licensed under <a href="https://github.com/getbem/getbem.com/blob/master/LICENSE.md">MIT</a>, documentation under <a href="https://github.com/getbem/getbem.com/blob/master/levels/pages/LICENSE.md">CC BY 3.0</a>.</p>
+
+          <ul class="list list_unstyled list_inline">
+            <li class="list__item"><a href="https://twitter.com/getbem">Twitter</a></li>
+            <li class="list__item"><a href="https://github.com/getbem/getbem.com/">GitHub</a></li>
+            <li class="list__item"><a href="https://github.com/getbem/getbem.com/issues">Issues</a></li>
+            <li class="list__item"><a href="https://github.com/getbem/getbem.com/issues/8">Project goals</a></li>
+            <li class="list__item"><a href="https://github.com/getbem/getbem.com/issues/1">Are you using BEM?</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/index.js"></script>
+</html>
